@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     if (alreadyBound) {
       return sendJson(
         res,
-        simpleText(`이미 서포터즈 인증이 완료되어 있습니다.\n\n이름: ${alreadyBound.name}`)
+        simpleText(`서포터즈 인증이 완료되었습니다.\n\n이름: ${alreadyBound.name}\n\n출석을 진행해주세요.`)
       );
     }
 
@@ -46,7 +46,7 @@ export default async function handler(req, res) {
     if (participant.ambiguous) {
       return sendJson(
         res,
-        simpleText("동일한 이름의 서포터즈가 2명 이상 등록되어 있어 자동 인증할 수 없습니다.\n운영자에게 문의해주세요.")
+        simpleText("동일한 이름의 서포터즈가 등록되어 있어 자동 인증할 수 없습니다.\n운영자에게 문의해주세요.")
       );
     }
 
