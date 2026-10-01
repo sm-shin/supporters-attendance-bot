@@ -20,7 +20,7 @@ export default async function handler(req, res) {
     if (alreadyBound) {
       return sendJson(
         res,
-        simpleText(`이미 서포터즈 인증이 완료되어 있습니다.\n\n이름: ${alreadyBound.name}`, ["오전 출석", "오후 출석"])
+        simpleText(`이미 서포터즈 인증이 완료되어 있습니다.\n\n이름: ${alreadyBound.name}`)
       );
     }
 
@@ -65,7 +65,7 @@ export default async function handler(req, res) {
 
     return sendJson(
       res,
-      simpleText(`✅ 서포터즈 인증이 완료되었습니다.\n\n이름: ${participant.name}\n\n이제 오전 또는 오후 출석을 선택해주세요.`, ["오전 출석", "오후 출석"])
+      simpleText(`✅ 서포터즈 인증이 완료되었습니다.\n\n이름: ${participant.name}\n\n이제 오전 또는 오후 출석을 선택해주세요.`)
     );
   } catch (e) {
     console.error(e);
